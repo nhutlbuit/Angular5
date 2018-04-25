@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public title = 'app';
+  public showlineIf = false;
+  public color ="red";
+  public colors: string[]= ["red","blue","green"];
+  public cOne = false;
+  public cTwo = true;
+ @Input() name:string;
+  
+  toggle(){
+    this.cOne = !this.cOne;
+    this.cTwo = !this.cTwo
+  }
+  
+
 }
