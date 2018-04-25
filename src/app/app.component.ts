@@ -18,6 +18,11 @@ export class AppComponent {
     this.cOne = !this.cOne;
     this.cTwo = !this.cTwo
   }
+
+  onSubmit(value:string){
+    
+    console.log(value);
+  }
   
 
 }
