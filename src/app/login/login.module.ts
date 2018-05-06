@@ -8,6 +8,7 @@ import { HighlightDirective } from '../highlight/highlight.directive';
 import { EmployeeComponent } from '../employee/employee.component';
 import { HttpModule } from '@angular/http'
 import { HomeComponent } from '../home/home.component'
+import { EmployeeService } from '../employee/employee.service';
 
 @NgModule({
   declarations: [

@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common'
+import { HomeModule } from '../home/home.module';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common'
     AppComponent
   ],
   imports: [
-    BrowserModule, FormsModule, CommonModule
+    BrowserModule, FormsModule, CommonModule, HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

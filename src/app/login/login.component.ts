@@ -28,7 +28,7 @@ export class LoginComponent implements AfterViewInit {
     //  alert("password is:"+event.target.value);
   }
   ngAfterViewInit() {
-    this.username.nativeElement.focus();
+   // this.username.nativeElement.focus();
   }
 
  

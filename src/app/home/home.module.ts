@@ -11,7 +11,11 @@ import { appRoutes } from './home.routes'
 import { NotFoundComponent } from '../notfound/notfound.component'
 import {MainPageComponent} from '../mainpage/mainpage.component'
 import {AppComponent} from '../app/app.component'
-
+import {EmployeeDetailComponent} from'../employee-detail/employee-detail.component'
+import { HttpClientModule } from "@angular/common/http";
+import { EmployeeService } from '../employee/employee.service';
+import { EmployeeOverviewComponent } from '../employee-overview/employee-overview.component';
+import { EmployeeProjectsComponent } from '../employee-projects/employee-project.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,20 @@ import {AppComponent} from '../app/app.component'
     HomeComponent,
     NotFoundComponent,
     MainPageComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeeDetailComponent,
+    EmployeeOverviewComponent,
+    EmployeeProjectsComponent
   ],
   imports: [
-    BrowserModule, FormsModule, CommonModule, HttpModule, appRoutes
+    BrowserModule, 
+    FormsModule, 
+    CommonModule, 
+    HttpModule, 
+    HttpClientModule,
+    appRoutes
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [HomeComponent]
 })
 export class HomeModule { }

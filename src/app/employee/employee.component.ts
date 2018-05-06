@@ -11,7 +11,7 @@ import {EmployeeService} from './employee.service'
     styleUrls: ['../login/login.component.css']
 })
 
-export class EmployeeComponent  {
+export class EmployeeComponent implements OnInit  {
     public employees: any[];
 
     constructor(private employeeService:EmployeeService) {
