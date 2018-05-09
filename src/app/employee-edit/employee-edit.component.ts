@@ -7,11 +7,11 @@ import { Subscription } from 'rxjs';
 import { EmployeeService } from '../employee/employee.service'
 
 @Component({
-    selector: 'employee-detail',
-    templateUrl: './employee-detail.component.html'
+    selector: 'employee-edit',
+    templateUrl: './employee-edit.component.html'
 })
 
-export class EmployeeDetailComponent implements OnInit, OnDestroy {
+export class EmployeeEditComponent implements OnInit, OnDestroy {
     public _id: number;
     public subscription: Subscription;
     public employee: any;
@@ -33,6 +33,19 @@ export class EmployeeDetailComponent implements OnInit, OnDestroy {
         this.employeeService.GetEmployeeDetail(this._id).subscribe((data: any) => {
             this.employee = data;
             console.log("this.employee" + this.employee);
+        });
+    }
+
+    goToEmployee(){
+        this.router.navigate(['/employee']);
+    }
+
+    SaveForm(){
+        this.employeeService.UpdateEmployee(this._id, this.employee).subscribe(response=>{
+            if(response){
+                alert("Save success");
+                this.router.navigate(['/employee']);
+            }
         });
     }
 

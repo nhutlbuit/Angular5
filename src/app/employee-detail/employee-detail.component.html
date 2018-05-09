@@ -1,27 +1,39 @@
-
-<th>Employee Detail</th>
-<table class="table" *ngIf="employee">
-    <tr>
-        <td> Id</td>
-        <td> {{employee?.id}}</td>
-    </tr>
-    <tr>
-        <td> Name</td>
-        <td> {{employee?.name}}</td>
-    </tr>
-    <tr>
-        <td> Age</td>
-        <td> {{employee?.age}}</td>
-    </tr>
-    <tr>
-        <td> Status</td>
-        <td> {{employee?.status}}</td>
-    </tr>
-    <tr>
-        <td> Create At</td>
-        <td> {{employee?.created|date}}</td>
-    </tr>
-</table> 
+<th>Employee Detail: </th>
+<br>
+<div class="container">
+    <table class="table table-bordered" *ngIf="employee">
+        <tr>
+            <td>
+                <B>Id</B>
+            </td>
+            <td> {{employee?.id}}</td>
+        </tr>
+        <tr>
+            <td>
+                <B>Name</B>
+            </td>
+            <td> {{employee?.name}}</td>
+        </tr>
+        <tr>
+            <td>
+                <B>Age</B>
+            </td>
+            <td> {{employee?.age}}</td>
+        </tr>
+        <tr>
+            <td>
+                <B>Status</B>
+            </td>
+            <td> {{employee?.status}}</td>
+        </tr>
+        <tr>
+            <td>
+                <B>Create At</B>
+            </td>
+            <td> {{employee?.created|date}}</td>
+        </tr>
+    </table>
+</div>
 <a class="btn btn-primary" [routerLink]="['overview']">Overview</a>
 <a class="btn btn-primary" [routerLink]="['projects']">Projects</a>
 <a class="btn btn-default" [routerLink]="['/employee']">Go back</a>

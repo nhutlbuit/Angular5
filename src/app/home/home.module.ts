@@ -16,6 +16,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { EmployeeService } from '../employee/employee.service';
 import { EmployeeOverviewComponent } from '../employee-overview/employee-overview.component';
 import { EmployeeProjectsComponent } from '../employee-projects/employee-project.component';
+import { LoginTestComponent } from '../login_test/login.component';
+import { EmployeeEditComponent } from '../employee-edit/employee-edit.component';
+import { EmployeeAddComponent } from '../employee-add/employee-add.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,13 @@ import { EmployeeProjectsComponent } from '../employee-projects/employee-project
     HomeComponent,
     NotFoundComponent,
     MainPageComponent,
-    LoginComponent,
     EmployeeDetailComponent,
     EmployeeOverviewComponent,
-    EmployeeProjectsComponent
+    EmployeeProjectsComponent,
+    LoginTestComponent,
+    LoginComponent,
+    EmployeeEditComponent,
+    EmployeeAddComponent
   ],
   imports: [
     BrowserModule, 

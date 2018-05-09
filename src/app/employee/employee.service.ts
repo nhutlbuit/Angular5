@@ -26,4 +26,36 @@ export class EmployeeService {
             console.error("error log for GetEmployeeDetail:"+error);
         });
     }
+
+    UpdateEmployee(id: number,data: any): Observable<any> {
+        return this._http.put(this.employeeApiUrl+id, data).map((response: Response) => {
+            return response.json();
+        },error=>{
+            console.error("error log for GetEmployeeDetail:"+error);
+        });
+    }
+    
+    AddEmployee(data: any): Observable<any> {
+        return this._http.post(this.employeeApiUrl, data).map((response: Response) => {
+            return response.json();
+        },error=>{
+            console.error("error log for GetEmployeeDetail:"+error);
+        });
+    }
+
+    DeleteEmployee(id: number): Observable<any> {
+        return this._http.delete(this.employeeApiUrl+id).map((response: Response) => {
+            return response.json();
+        },error=>{
+            console.error("error log for GetEmployeeDetail:"+error);
+        });
+    }
+
+    SearchEmployee(keyword: string): Observable<any> {
+        return this._http.get(this.employeeApiUrl+"?search="+keyword).map((response: Response) => {
+            return response.json();
+        },error=>{
+            console.error("error log for GetEmployeeDetail:"+error);
+        });
+    }
 }

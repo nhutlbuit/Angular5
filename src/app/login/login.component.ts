@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -6,32 +7,20 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 
+export class LoginComponent {
 
-export class LoginComponent implements AfterViewInit {
-  title = 'Sign In';
-  msgs = [];
-  @ViewChild('name') username: ElementRef;
+  constructor(private router: Router) {
 
-
-  onClick() {
-    console.log("clicked");
   }
 
-  onChange(event) {
-    console.log(event);
-    console.log(event.target.value);
-    this.msgs.push(event.target.value);
-    // alert("using viewChild:"+this.username.nativeElement.value);
-  }
+  CheckLogin(value: any) {
+    console.log(value);
+    if (value.userName == "admin" && value.password == "admin") {
+      this.router.navigate(['/']);
 
-  onChangePass(event) {
-    //  alert("password is:"+event.target.value);
+    } else {
+      alert("username or password is not correctly");
+    }
   }
-  ngAfterViewInit() {
-   // this.username.nativeElement.focus();
-  }
-
- 
-
 
 }
