@@ -3,7 +3,6 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-///must be injectable to declare Http
 @Injectable()
 export class EmployeeService {
     private employeeApiUrl: string = "http://5aea8aeb531a580014142894.mockapi.io/api/employees/";
@@ -15,7 +14,7 @@ export class EmployeeService {
         return this._http.get(this.employeeApiUrl).map((response: Response) => {
             return response.json();
         },error=>{
-            console.error("error log for employeeService:"+error);
+            console.error("error log for GetListEmployee function:"+error);
         });
     }
 
@@ -23,7 +22,7 @@ export class EmployeeService {
         return this._http.get(this.employeeApiUrl + id).map((response: Response) => {
             return response.json();
         },error=>{
-            console.error("error log for GetEmployeeDetail:"+error);
+            console.error("error log for GetEmployeeDetail function:"+error);
         });
     }
 
@@ -31,7 +30,7 @@ export class EmployeeService {
         return this._http.put(this.employeeApiUrl+id, data).map((response: Response) => {
             return response.json();
         },error=>{
-            console.error("error log for GetEmployeeDetail:"+error);
+            console.error("error log for UpdateEmployee function:"+error);
         });
     }
     
@@ -39,7 +38,7 @@ export class EmployeeService {
         return this._http.post(this.employeeApiUrl, data).map((response: Response) => {
             return response.json();
         },error=>{
-            console.error("error log for GetEmployeeDetail:"+error);
+            console.error("error log for AddEmployee function:"+error);
         });
     }
 
@@ -47,7 +46,7 @@ export class EmployeeService {
         return this._http.delete(this.employeeApiUrl+id).map((response: Response) => {
             return response.json();
         },error=>{
-            console.error("error log for GetEmployeeDetail:"+error);
+            console.error("error log for DeleteEmployee function:"+error);
         });
     }
 
@@ -55,7 +54,7 @@ export class EmployeeService {
         return this._http.get(this.employeeApiUrl+"?search="+keyword).map((response: Response) => {
             return response.json();
         },error=>{
-            console.error("error log for GetEmployeeDetail:"+error);
+            console.error("error log for SearchEmployee function:"+error);
         });
     }
 }
