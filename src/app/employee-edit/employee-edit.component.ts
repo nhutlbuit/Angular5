@@ -37,14 +37,14 @@ export class EmployeeEditComponent implements OnInit, OnDestroy {
     }
 
     goToEmployee(){
-        this.router.navigate(['/employee']);
+        this.router.navigate(['employee']);
     }
 
     SaveForm(){
         this.employeeService.UpdateEmployee(this._id, this.employee).subscribe(response=>{
             if(response){
                 alert("Save success");
-                this.router.navigate(['/employee']);
+                this.router.navigate(['employee']);
             }
         });
     }
