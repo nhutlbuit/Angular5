@@ -2,13 +2,16 @@
 <br>
 <br>
 <div class="container">
-    <form class="form" #f="ngForm" (ngSubmit)="SaveForm()">
+    <form class="form" #f="ngForm" name="form" (ngSubmit)="SaveForm()">
         <div class="form-group row">
             <label class="col-sm-1">
                 <B>Name:</B>
             </label>
             <div class="col-sm-11">
-                <input type="text" name="name" ngModel [(ngModel)]="employee.name" />
+                <input type="text" name="name" [(ngModel)]="employee.name" minlength="2" maxlength="20" 
+                required autofocus #name="ngModel" pattern ="[a-zA-Z ]*" />    
+                <div class="alert alert-danger" *ngIf="name.errors?.pattern">Invalid name</div>        
+                <div class="alert alert-danger" *ngIf="name.invalid">Username must be at least 2 characters</div>    
             </div>
         </div>
         <div class="form-group row">
@@ -16,7 +19,10 @@
                 <B>Age:</B>
             </label>
             <div class="col-sm-11">
-                <input type="number" name="age" ngModel [(ngModel)]="employee.age" />
+                <input type="number" name="age" [(ngModel)]="employee.age" #age="ngModel" required/>
+                <div class="alert alert-danger" *ngIf="employee.age <1 || employee.age >99">
+                    Age must be greater than 0 and less than 100</div>
+                <div class="alert alert-danger" *ngIf="age.invalid">Field must be enter!</div>
             </div>
         </div>
         <div class="form-group row">
@@ -27,7 +33,7 @@
                 <input type="checkbox" name="status" ngModel [(ngModel)]="employee.status" /> </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-primary" type="submit" ng-disabled="!form.$dirty || (form.$dirty && form.$invalid)">Save</button>
             <button class="btn btn-warning" type="button" (click)="goToEmployee()">Cancel</button>
         </div>
     </form>

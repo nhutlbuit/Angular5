@@ -2,24 +2,32 @@
 
     <!-- Header -->
     <ul class="nav nav-pills navbar-expand-sm bg-dark navbar-dark" role="tablist">
-        <li class="nav-item">
-            <a class="navbar-brand" data-toggle="pill" routerLink="/" routerLinkActive="active">Home</a>
+              
+        <div (click)="CheckStatusLogin($event)">
+            <li class="nav-item">
+                <a class="navbar-brand" data-toggle="pill" routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+        </div>
+        <div (click)="CheckStatusLogin($event)">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" routerLink="/employee" routerLinkActive="active">Employee List</a>
+            </li>
+        </div>
+        <div (click)="CheckStatusLogin($event)">
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" routerLink="/typescript" routerLinkActive="active">Type Script</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" routerLink="/logintest" routerLinkActive="active">Login-Test</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" routerLink="/employee" routerLinkActive="active">Employee List</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" routerLink="/app" routerLinkActive="active">Type Script</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" routerLink="/login" routerLinkActive="active">Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" routerLink="/logout" routerLinkActive="active">Logout</a>
-        </li>
+        </div>       
+        <div *ngIf="!isLoggedIn" (click)="CheckStatusLogin($event)">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" routerLink="/login" routerLinkActive="active">Login</a>
+            </li>
+        </div>
+        <div *ngIf="isLoggedIn"(click)="CheckStatusLogin($event)" >
+            <li class="nav-item">
+                <a class="nav-link" (click)="Logout()" data-toggle="pill" routerLink="/logout" routerLinkActive="active">Logout</a>
+            </li>
+        </div>
     </ul>
 </section>
 <router-outlet>

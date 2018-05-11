@@ -8,8 +8,7 @@ import { EmployeeService } from '../employee/employee.service'
 
 @Component({
     selector: 'employee-projects',
-    templateUrl: './employee-project.component.html',
-    styleUrls: ['../app/app.component.css']
+    templateUrl: './employee-project.component.html'
 })
 
 export class EmployeeProjectsComponent implements OnDestroy, OnInit{

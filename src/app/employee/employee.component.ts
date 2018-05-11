@@ -27,7 +27,7 @@ export class EmployeeComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(param => {
       this.currentPage = param['pageNumber'] || 1;
-      console.log("-Page number is:" + this.currentPage + "\n-Filter is: " + param['filter']);
+    //  console.log("-Page number is:" + this.currentPage + "\n-Filter is: " + param['filter']);
     });
 
     this.LoadData();
@@ -51,7 +51,7 @@ export class EmployeeComponent implements OnInit {
     this.employeeService.GetListEmployee().subscribe((response: any[]) => {
       this.employeeService.GetListEmployee().subscribe
       this.employees = response;
-      console.log(response);
+     // console.log(response);
     });
   }
 
@@ -59,7 +59,7 @@ export class EmployeeComponent implements OnInit {
     this.employeeService.SearchEmployee(this.keyword).subscribe((response: any[]) => {
       this.employeeService.SearchEmployee(this.keyword).subscribe
       this.employees = response;
-      console.log(response);
+    //  console.log(response);
     });
   }
 

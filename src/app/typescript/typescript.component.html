@@ -1,0 +1,29 @@
+<div class="container">
+
+  <!-- ngSwitch-->
+  <div [ngSwitch]="color">
+    <p *ngSwitchCase=" 'red' ">This is red line</p>
+    <p *ngSwitchCase=" 'yellow' ">This is yellow line</p>
+    <p *ngSwitchCase=" 'blue' ">This is blue line</p>
+    <div *ngSwitchCase=" 'xxx' ">Invalid color</div>
+  </div>
+
+  <!-- ngClass-->
+  <p [ngClass]="{classOne:cOne, classTwo:cTwo}">using css in here</p>
+  <button (click)="toggle()">change text color</button>
+
+  <!--  Component Interaction-->
+  <br>
+  <br>
+  <input type="text" #textname (keyup)="0" />
+  <p>{{name}}</p>
+
+  
+  <div>
+    <input type="radio" nameColor="colors" (click)="color='lightgreen'">Green
+    <input type="radio" nameColor="colors" (click)="color='yellow'">Yellow
+    <input type="radio" nameColor="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlight]="color">Highlight me!</p>
+
+</div>

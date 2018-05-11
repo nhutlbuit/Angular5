@@ -52,9 +52,14 @@ export class EmployeeService {
 
     SearchEmployee(keyword: string): Observable<any> {
         return this._http.get(this.employeeApiUrl+"?search="+keyword).map((response: Response) => {
+            console.info("SearchEmployee: "+response.json());
             return response.json();
+           
         },error=>{
             console.error("error log for SearchEmployee function:"+error);
         });
     }
+
+
+
 }

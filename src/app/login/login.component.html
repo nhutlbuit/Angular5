@@ -1,10 +1,10 @@
-<form class="form-horizonal" #f="ngForm" method="POST" (ngSubmit)="CheckLogin(f.value)">
-
+<form class="form-horizonal" #f="ngForm" method="POST" (ngSubmit)="CheckLogin(f.value)" [ngFormOptions]="{updateOn: 'blur'}">
+<!-- to resolve issue: Cannot read property 'minlength' of null, we can use ? before to check object has definded-->
     <div class="form-group">
         <label class="col-md-2"> UserName</label>
         <div class="col-md-10>">
             <input type="text" class="form-control" name="userName" #name="ngModel" ngModel placeholder="Enter username" minlength="5"
-                maxlength="20" required name="userName" autofocus>
+                maxlength="20" required name="userName" autofocus >
             <div class="alert alert-danger" [hidden]="!name.errors?.required">Field must be enter!</div>
             <!--       *ngIf="name.invalid" has contain [hidden]="!name.errors?.minlength"
             <div class="alert alert-danger" [hidden]="!name.errors?.minlength">userName must be at least 6 characters</div> -->
@@ -16,7 +16,7 @@
         <label class="col-md-2"> Password</label>
         <div class="col-md-10>">
             <input type="password" class="form-control" name="password" minlength="8" maxlength="20" required name="password" #password="ngModel"
-                ngModel placeholder="Enter password">
+                ngModel placeholder="Enter password" >
             <div class="alert alert-danger" [hidden]="!password.errors?.required">Field must be enter!</div>
             <div *ngIf="password.invalid" class="alert alert-danger">Invalid password</div>
         </div>

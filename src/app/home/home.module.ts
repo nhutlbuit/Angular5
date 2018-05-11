@@ -9,20 +9,22 @@ import { EmployeeComponent } from '../employee/employee.component';
 import { HttpModule } from '@angular/http'
 import { appRoutes } from './home.routes'
 import { NotFoundComponent } from '../notfound/notfound.component'
-import {MainPageComponent} from '../mainpage/mainpage.component'
-import {AppComponent} from '../app/app.component'
-import {EmployeeDetailComponent} from'../employee-detail/employee-detail.component'
+import { MainPageComponent } from '../mainpage/mainpage.component'
+import { EmployeeDetailComponent } from '../employee-detail/employee-detail.component'
 import { HttpClientModule } from "@angular/common/http";
 import { EmployeeService } from '../employee/employee.service';
 import { EmployeeOverviewComponent } from '../employee-overview/employee-overview.component';
 import { EmployeeProjectsComponent } from '../employee-projects/employee-project.component';
-import { LoginTestComponent } from '../login_test/login.component';
 import { EmployeeEditComponent } from '../employee-edit/employee-edit.component';
 import { EmployeeAddComponent } from '../employee-add/employee-add.component';
+import { TypeScriptComponent } from '../typescript/typescript.component';
+import { LoginService } from '../services/login.service';
+import { CheckLoginGuard } from '../guards/check-login.component';
+import { CheckSaveFormGuard } from '../guards/check-save-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    TypeScriptComponent,
     HighlightDirective,
     EmployeeComponent,
     HomeComponent,
@@ -31,20 +33,19 @@ import { EmployeeAddComponent } from '../employee-add/employee-add.component';
     EmployeeDetailComponent,
     EmployeeOverviewComponent,
     EmployeeProjectsComponent,
-    LoginTestComponent,
     LoginComponent,
     EmployeeEditComponent,
     EmployeeAddComponent
   ],
   imports: [
-    BrowserModule, 
-    FormsModule, 
-    CommonModule, 
-    HttpModule, 
+    BrowserModule,
+    FormsModule,
+    CommonModule,
+    HttpModule,
     HttpClientModule,
     appRoutes
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, LoginService, CheckLoginGuard, CheckSaveFormGuard],
   bootstrap: [HomeComponent]
 })
 export class HomeModule { }
