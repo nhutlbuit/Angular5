@@ -11,11 +11,7 @@ import { HomeComponent } from '../home/home.component'
 import { EmployeeService } from '../employee/employee.service';
 
 @NgModule({
-  declarations: [
-    EmployeeComponent,
-    HomeComponent,
-    LoginComponent
-  ],
+  declarations: [],
   imports: [
     BrowserModule, FormsModule, CommonModule, HttpModule
   ],
