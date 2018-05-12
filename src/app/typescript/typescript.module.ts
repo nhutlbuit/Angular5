@@ -8,7 +8,6 @@ import { HomeModule } from '../home/home.module';
 
 @NgModule({
   declarations: [
-    TypeScriptComponent
   ],
   imports: [
     BrowserModule, FormsModule, CommonModule, HomeModule
