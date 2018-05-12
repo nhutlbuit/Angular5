@@ -5,27 +5,27 @@
               
         <div>
             <li class="nav-item">
-                <a class="navbar-brand" data-toggle="pill" routerLink="/" routerLinkActive="active">Home</a>
+                <a class="navbar-brand" data-toggle="pill" routerLink="./" routerLinkActive="active">Home</a>
             </li>
         </div>
         <div *ngIf="CheckStatusLogin()">
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" routerLink="/employee" routerLinkActive ="active">Employee List</a>
+                <a class="nav-link" data-toggle="pill" routerLink="./employee" routerLinkActive ="active">Employee List</a>
             </li>
         </div>
         <div *ngIf="CheckStatusLogin()">
             <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" routerLink="/typescript" routerLinkActive="active" routerLinkActiveOptions="{exact: true}">Type Script</a>
+            <a class="nav-link" data-toggle="pill" routerLink="./typescript" routerLinkActive="active" routerLinkActiveOptions="{exact: true}">Type Script</a>
         </li>
         </div>       
         <div *ngIf="!CheckStatusLogin()">
             <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" routerLink="/login" routerLinkActive="active">Login</a>
+                <a class="nav-link" data-toggle="pill" routerLink="./login" routerLinkActive="active">Login</a>
             </li>
         </div>
         <div *ngIf="CheckStatusLogin()" >
             <li class="nav-item">
-                <a class="nav-link" (click)="Logout()" data-toggle="pill" routerLink="/logout" routerLinkActive="active">Logout</a>
+                <a class="nav-link" (click)="Logout()" data-toggle="pill" routerLink="./logout" routerLinkActive="active">Logout</a>
             </li>
         </div>
     </ul>
