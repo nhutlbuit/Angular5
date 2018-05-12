@@ -34,7 +34,8 @@ import { CheckSaveFormGuard } from '../guards/check-save-form.component';
     EmployeeProjectsComponent,
     LoginComponent,
     EmployeeEditComponent,
-    EmployeeAddComponent
+    EmployeeAddComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
