@@ -25,7 +25,6 @@ import { CheckSaveFormGuard } from '../guards/check-save-form.component';
 @NgModule({
   declarations: [
     TypeScriptComponent,
-    HighlightDirective,
     EmployeeComponent,
     HomeComponent,
     NotFoundComponent,

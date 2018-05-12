@@ -12,7 +12,6 @@ import { EmployeeService } from '../employee/employee.service';
 
 @NgModule({
   declarations: [
-    HighlightDirective,
     EmployeeComponent,
     HomeComponent,
     LoginComponent
