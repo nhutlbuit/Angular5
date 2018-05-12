@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'not-found-component',
-  template: `<h2>404 Error</h2>`
+  selector: 'app-error-404',
+  templateUrl: './error-404.component.html',
+  styleUrls: ['./error-404.component.css']
 })
 export class NotFoundComponent {
 }

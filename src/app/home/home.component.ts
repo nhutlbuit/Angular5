@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'home-root',
@@ -10,13 +11,14 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
 export class HomeComponent implements OnInit {
   public isLoggedIn: boolean;
 
-  constructor(private loginService: LoginService) {
-
+  constructor(private loginService: LoginService, private router: Router){ 
+    
   }
 
   Logout() {
     this.loginService.SetLogin(false);
     alert("Logged out");
+    this.router.navigate(['/']);
   }
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class HomeComponent implements OnInit {
   CheckStatusLogin() {
    /// alert(this.isLoggedIn);
     this.isLoggedIn = this.loginService.IsLogged();
+    return this.isLoggedIn;
   }
 
 }

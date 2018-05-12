@@ -11,6 +11,9 @@ export class CheckLoginGuard implements CanActivate {
 
   canActivate() {
     let status = this.loginService.IsLogged();
+    if(!status){
+      alert("You have\'t permision access to this page")
+    }
     return status;
   }
 

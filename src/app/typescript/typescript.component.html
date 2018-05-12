@@ -1,6 +1,7 @@
 <div class="container">
 
   <!-- ngSwitch-->
+  <p>ngSwitch </p>
   <div [ngSwitch]="color">
     <p *ngSwitchCase=" 'red' ">This is red line</p>
     <p *ngSwitchCase=" 'yellow' ">This is yellow line</p>
@@ -9,6 +10,7 @@
   </div>
 
   <!-- ngClass-->
+  <p>ngClass </p>
   <p [ngClass]="{classOne:cOne, classTwo:cTwo}">using css in here</p>
   <button (click)="toggle()">change text color</button>
 
@@ -18,12 +20,13 @@
   <input type="text" #textname (keyup)="0" />
   <p>{{name}}</p>
 
-  
+<!-- Uisng highLight directive-->
+<p>HighLight Directive </p>
   <div>
     <input type="radio" nameColor="colors" (click)="color='lightgreen'">Green
     <input type="radio" nameColor="colors" (click)="color='yellow'">Yellow
     <input type="radio" nameColor="colors" (click)="color='cyan'">Cyan
-</div>
-<p [appHighlight]="color">Highlight me!</p>
+  </div>
+ <!-- <p [appHighlight]="color">Highlight me!</p> -->
 
 </div>
